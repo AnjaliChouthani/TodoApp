@@ -29,9 +29,8 @@ public class User {
         this.taskList = taskList;
     }
 
-
+@JsonManagedReference
     @OneToMany(mappedBy ="user",cascade = CascadeType.ALL)
-    @JsonManagedReference
    private List<Task>taskList;
 
     public User() {

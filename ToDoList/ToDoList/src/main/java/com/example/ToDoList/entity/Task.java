@@ -15,10 +15,9 @@ public class Task {
    private String description;
   private boolean isCompleted;
 
-
+@JsonBackReference
   @ManyToOne
   @JoinColumn(name="user_id")
-  @JsonBackReference
   private User user;
     public Task() {
 
