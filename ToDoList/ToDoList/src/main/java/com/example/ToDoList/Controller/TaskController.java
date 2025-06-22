@@ -2,6 +2,7 @@ package com.example.ToDoList.Controller;
 
 import com.example.ToDoList.Services.TaskServices;
 import com.example.ToDoList.entity.Task;
+import com.example.ToDoList.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,14 +24,14 @@ public class TaskController {
     public Optional<Task> getTask(@RequestParam Long id) {
         return taskServices.getTask(id);
     }
-    @DeleteMapping("/id")
-    public ResponseEntity<String> deleteTask(@RequestParam Long id){
-       return taskServices.deleteTask(id);
+    @DeleteMapping("/delete/{name}/{id}")
+    public ResponseEntity<String> deleteTask(@PathVariable String name,@PathVariable Long id){
+       return taskServices.deleteTask(name,id);
     }
 
 
-    @PutMapping("/id")
-    public ResponseEntity<String> updateTask(@RequestParam Long id){
-        return taskServices.updateTask(id);
+    @PutMapping("/update/{name}/{id}")
+    public ResponseEntity<String> updateTask(@PathVariable String name,@PathVariable Long id){
+        return taskServices.updateTask(name,id);
     }
 }
