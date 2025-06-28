@@ -33,12 +33,13 @@ public class User {
     @OneToMany(mappedBy ="user",cascade = CascadeType.ALL)
    private List<Task>taskList;
 
-    public User() {
-    }
-
-    public User(Long id, String name, List<Task> taskList) {
-        this.id = id;
-        this.name = name;
-        this.taskList = taskList;
-    }
+//    public User() {
+//
+//    }
+//
+//    public User(Long id, String name, List<Task> taskList) {
+//        this.id = id;
+//        this.name = name;
+//        this.taskList = taskList;
+//    }
 }
